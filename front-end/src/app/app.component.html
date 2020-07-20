@@ -1,0 +1,39 @@
+<div class="container">
+	<br>
+	<h2 style="text-align: center;">{{title}}</h2>
+	<hr>
+	
+	<div class="card" >
+		<div class="card-body">
+			<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+				<!-- Links -->
+				<ul class="navbar-nav" *ngIf="authenticationService.isUserLoggedIn()">
+					<li class="nav-item"><a routerLink="cars" class="nav-link"
+						routerLinkActive="active">Car List</a></li>
+					<li class="nav-item"><a routerLink="add" class="nav-link"
+						routerLinkActive="active">Add Car</a></li>
+				</ul>
+				
+				<ul class="navbar-nav" *ngIf="authenticationService.isUserLoggedIn()">
+					<li class="nav-item"><a routerLink="logout" class="nav-link" routerLinkActive="active"
+						(click)="logout()">Logout</a></li>
+					
+				</ul>
+			</nav>
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>
+
+<br/>
+<hr>
+<footer class="footer">
+	<div class="container">
+		<div class="card">
+			<div class="card-body">
+				<span style="text-align: center;">Angular SpringBoot CRUD 
+					2020 </span>
+			</div>
+		</div>
+	</div>
+</footer>

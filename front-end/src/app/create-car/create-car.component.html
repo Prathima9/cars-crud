@@ -1,0 +1,50 @@
+<h3>Add New Car</h3>
+<link rel="stylesheet" href="https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css">
+<div [hidden]="submitted" style="width: 400px;">
+	<form (ngSubmit)="onSubmit()" class="form-inline">
+	<fieldset class="container">
+		<div class="form-group mb-2">
+			<label for="name" class="sr-only">Make:</label> <input type="text"
+				class="form-control-plaintext" id="make" required [(ngModel)]="car.make"
+				name="make">
+		</div>
+
+		<div class="form-group mb-2">
+			<label for="name" class="sr-only">Color:</label> <input type="text"
+				class="form-control-plaintext" id="color" required [(ngModel)]="car.color"
+				name="color">
+		</div>
+
+		<div class="form-group mb-2">
+			<label for="name" class="sr-only">Model:</label> <input type="text"
+				class="form-control-plaintext" id="model" required [(ngModel)]="car.model"
+				name="model">
+		</div>
+		<div class="form-group mb-2">
+			<label for="name" class="sr-only">Number of doors:</label> <input type="text"
+				class="form-control-plaintext" id="numberofdoors" required
+				[(ngModel)]="car.numberofdoors" name="numberofdoors">
+		</div>
+
+		<div class="form-group mb-2">
+			<label for="name" class="sr-only">Engine size:</label> <input type="text"
+				class="form-control-plaintext" id="enginesie" required
+				[(ngModel)]="car.enginesie" name="enginesie">
+		</div>
+
+		<div class="form-group mb-2">
+			<label for="name" class="sr-only">Build date:</label> <input type="text"
+				class="form-control-plaintext" id="builddate" required
+				[(ngModel)]="car.builddate" name="builddate">
+		</div>
+
+		<button type="submit" class="btn btn-success">Submit</button>
+		</fieldset>
+	</form>
+</div>
+
+
+<div [hidden]="!submitted">
+	<h4>You submitted successfully!</h4>
+	<!-- <button class="btn btn-success" (click)="newCar()">Add</button> -->
+</div>
